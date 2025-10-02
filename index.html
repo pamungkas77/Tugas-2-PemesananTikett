@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pemesanan Tiket Pesawat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    fieldset {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .radio-group {
+      margin-top: 10px;
+    }
+    .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Form Pemesanan Tiket Pesawat</h2>
+
+  <form>
+    <!-- Informasi Penumpang -->
+    <fieldset>
+      <legend>Informasi Penumpang</legend>
+      <label>Nama Lengkap:
+        <input type="text" name="nama" placeholder="Masukkan Nama Lengkap" required>
+      </label>
+      <label>Nomor Identitas (KTP/Paspor):
+        <input type="text" name="identitas" placeholder="Masukkan Nomor Identitas" required>
+      </label>
+      <label>Jenis Kelamin:
+        <select name="jenis_kelamin">
+          <option value="laki-laki">Laki-laki</option>
+          <option value="perempuan">Perempuan</option>
+        </select>
+      </label>
+      <label>Alamat Email:
+        <input type="email" name="email" placeholder="Masukkan Email" required>
+      </label>
+      <label>Nomor Telepon:
+        <input type="tel" name="telepon" placeholder="Masukkan Nomor Telepon" required>
+      </label>
+    </fieldset>
+
+    <!-- Informasi Penerbangan -->
+    <fieldset>
+      <legend>Informasi Penerbangan</legend>
+      <label>Bandara Keberangkatan:
+        <select name="keberangkatan">
+          <option value="cgk">Soekarno-Hatta (CGK)</option>
+          <option value="sub">Juanda (SUB)</option>
+          <option value="dps">Ngurah Rai (DPS)</option>
+        </select>
+      </label>
+      <label>Bandara Tujuan:
+        <select name="tujuan">
+          <option value="cgk">Soekarno-Hatta (CGK)</option>
+          <option value="sub">Juanda (SUB)</option>
+          <option value="dps">Ngurah Rai (DPS)</option>
+        </select>
+      </label>
+      <label>Tanggal Keberangkatan:
+        <input type="date" name="tgl_berangkat" required>
+      </label>
+      <label>Tanggal Kepulangan (opsional):
+        <input type="date" name="tgl_pulang">
+      </label>
+      <label>Jumlah Penumpang:
+        <input type="number" name="jumlah_penumpang" min="1" value="1">
+      </label>
+      <label>Kelas Penerbangan:
+        <select name="kelas">
+          <option value="ekonomi">Ekonomi</option>
+          <option value="bisnis">Bisnis</option>
+          <option value="first">First Class</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <!-- Metode Pembayaran -->
+    <fieldset>
+      <legend>Metode Pembayaran</legend>
+      <div class="radio-group">
+        <label><input type="radio" name="pembayaran" value="kartu" required> Kartu Kredit</label>
+        <label><input type="radio" name="pembayaran" value="transfer"> Transfer Bank</label>
+        <label><input type="radio" name="pembayaran" value="ewallet"> E-Wallet (GoPay, OVO, dll.)</label>
+      </div>
+    </fieldset>
+
+    <button type="submit">Pesan Tiket</button>
+  </form>
+
+</body>
+</html>
